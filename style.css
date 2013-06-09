@@ -1,0 +1,181 @@
+/*
+Theme Name: Semillero
+Theme URI: http://samuelbran.com/semillero
+Author: Samuel Bran
+Author URI: http://samuelbran.com/
+Description: Semillero is a starter theme for websites based on WordPress.
+*/
+/* BASIC STYLES
+-----------------------------------------------------------------------------------------------*/
+/*you can get rid of this.. if you want */
+.bt-title, .bt-description {
+  text-align: center;
+  margin: 0;
+}
+
+.bt-title {
+  padding-top: 120px;
+  font-size: 7em;
+  font-family: 'OpenSansExtrabold';
+  color: #e04237;
+}
+
+.bt-description {
+  color: #f0b753;
+  margin-top: -10px;
+  margin-bottom: 80px;
+  letter-spacing: 2px;
+}
+
+/*-----------------------------------------*/
+* {
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  color: #413e4f;
+  background: #f9f9f9;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  color: #e04237;
+  -webkit-transition: all ease-in 0.1s;
+  -moz-transition: all ease-in 0.1s;
+  transition: all ease-in 0.1s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfloat:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#main {
+  min-height: 500px;
+}
+
+/* =Navigation
+-----------------------------------------------------------------------------------------*/
+header nav {
+  background: #fff;
+}
+header nav .menu {
+  padding-left: 0;
+  margin: 0;
+  position: relative;
+}
+header nav .menu > li {
+  display: inline-block;
+  margin: 0 5px;
+}
+header nav .menu > li:hover > .sub-menu {
+  display: block;
+}
+header nav .menu > li:first-child {
+  margin-left: 0;
+}
+header nav .menu > li:last-child {
+  margin-right: 0;
+}
+header nav .menu > li > a {
+  padding: 10px;
+  display: inline-block;
+}
+header nav .menu > li > a:hover {
+  color: #f9f9f9;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  background: #e04237;
+}
+
+.active-link {
+  color: #f9f9f9;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  background: #e04237;
+}
+
+/* =Sidebar
+-----------------------------------------------------------------------------------------*/
+aside {
+  background: #fff;
+  width: 35%;
+  float: left;
+}
+aside ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.widget {
+  padding: 20px 20px 0 20px;
+}
+.widget h2 {
+  margin: 0;
+}
+
+/* =Error 404 Page
+-----------------------------------------------------------------------------------------*/
+.error404 {
+  background: url("css/images/alert_bg.png") bottom right no-repeat;
+  height: 100%;
+}
+.error404 h1 {
+  font-size: 7.8125em;
+  color: #c3c3c3;
+}
+.error404 p {
+  color: #a4a4a4;
+  padding-left: 20px;
+}
+.error404 .go-home {
+  color: #333;
+  margin-left: 10px;
+}
+.error404 .go-home span {
+  font-size: 1.1666666666666666666666666666667em;
+}
+.error404 input[type=text], .error404 [type=submit] {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.error404 input[type=text] {
+  background: #ededed;
+  margin: 10px 0 0 20px;
+}
+.error404 input[type=submit] {
+  background: #e24444;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}

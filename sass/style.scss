@@ -1,0 +1,198 @@
+@import "base";
+@charset "utf-8";
+/*
+Theme Name: Semillero
+Theme URI: http://samuelbran.com/semillero
+Author: Samuel Bran
+Author URI: http://samuelbran.com/
+Description: Semillero is a starter theme for websites based on WordPress.
+*/
+/* BASIC STYLES
+-----------------------------------------------------------------------------------------------*/
+
+/*you can get rid of this.. if you want */
+.bt-title, .bt-description {
+	text-align: center;
+	margin: 0;
+}
+.bt-title {
+	padding-top: 120px;
+	font-size: 7em;
+	font-family: 'OpenSansExtrabold';
+	color: $fourth-color;
+}
+.bt-description {
+	color: $fifth-color;
+	margin-top: -10px;
+	margin-bottom: 80px;
+	letter-spacing: 2px;
+}
+/*-----------------------------------------*/
+
+* {
+	outline: 0;
+	border:none;
+	text-decoration: none;
+	list-style-type: none;
+}
+body {
+	color: $primary-color;
+	background: $third-color;
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3,
+h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+}
+a {
+	color: $fourth-color;
+	@include transition(all ease-in .1s);
+}
+a:hover {
+	text-decoration: underline;
+}
+p {
+
+}
+img {
+
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.clearfloat:after {
+	display: block;
+	content: "";
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {}
+#main {
+	min-height: 500px;
+}
+
+footer {}
+
+
+/* =Navigation
+-----------------------------------------------------------------------------------------*/
+header nav {
+	background: #fff;
+
+	.menu {
+		padding-left: 0;
+		margin: 0;
+		position: relative;
+
+		& > li {
+			display: inline-block;
+			margin: 0 5px;
+
+			&:hover > .sub-menu {
+				display: block;
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+
+			& > a {
+				padding: 10px;
+				display: inline-block;
+
+				&:hover {
+					color: $third-color;
+					text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+					text-decoration: none;
+					background: $fourth-color;
+				}
+			}
+		}
+	}
+}
+.active-link {
+	color: $third-color;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+	text-decoration: none;
+	background: $fourth-color;
+}
+
+/* =Sidebar
+-----------------------------------------------------------------------------------------*/
+aside {
+	background: #fff;
+	width: 35%;
+	float: left;
+
+	ul {
+		padding-left: 0;
+		margin-top: 0;
+	}
+}
+
+.widget {
+	padding: 20px 20px 0 20px;
+
+	h2 {
+		margin: 0;
+	}
+}
+
+/* =Error 404 Page
+-----------------------------------------------------------------------------------------*/
+.error404 {
+	background: url("css/images/alert_bg.png") bottom right no-repeat;
+	height: 100%;
+
+	h1 {
+	font-size: 7.8125em;
+	color: #c3c3c3;
+	}
+
+	p {
+		color: #a4a4a4;
+		padding-left: 20px;
+	}
+
+	.go-home {
+		color: #333;
+		margin-left: 10px;
+
+		span {
+			font-size: 1.1666666666666666666666666666667em;
+		}
+	}
+
+	input[type=text], [type=submit] {
+		padding: 5px 10px;
+		border-radius: 3px;
+	}
+
+	input[type=text] {
+		background: #ededed;
+		margin: 10px 0 0 20px;
+	}
+
+	input[type=submit] {
+		background: #e24444;
+		color: #fff;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	}
+
+}

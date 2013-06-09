@@ -1,0 +1,93 @@
+body.login {
+	font-family: 'OpenSansLight';
+	background: #f2f2f2;
+}
+.login form {
+	margin-left: 0;
+	padding: 26px 24px 46px;
+	font-weight: normal;
+	background: #009DDC url("images/login-bg.png");
+	border: none;
+	-moz-box-shadow: 0px 1px 3px #9d9d9d;
+	-webkit-box-shadow: 0px 1px 3px #9d9d9d;
+	box-shadow: 0px 1px 3px #9d9d9d;
+	position: relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.login form p label {
+	color: #fff;
+	text-shadow: 1px 1px 0 #136b8e;
+}
+.login h1 a {
+	background-image: url('images/logo-login.png');
+	background-size: 300px 65px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 320px;
+	height: 65px;
+	text-indent: -9999px;
+	overflow: hidden;
+	padding-bottom: 15px;
+	display: block;
+}
+
+.login input[type=submit] {
+	background: #f9f9f9;
+	text-shadow: none;
+	font-weight: normal;
+	padding: 8px 25px;
+	color: #333;
+	border: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px #085a7b;
+	-moz-box-shadow: 0 1px 1px #085a7b;
+	box-shadow: 0 1px 1px #085a7b;
+}
+
+.login input[type=text], .login input[type=text]:focus, 
+.login input[type=password], .login input[type=password]:focus {
+	border: 1px solid #fff;
+	font-family: "OpenSansLight" !important;
+	font-weight: normal;
+	padding: 5px;
+	text-align: center;
+	background: #e8e8e8;
+	-webkit-box-shadow: 0 1px 1px #085a7b;
+	-moz-box-shadow: 0 1px 1px #085a7b;
+	box-shadow: 0 1px 1px #085a7b;
+}
+.login input[type=password], .login input[type=password]:focus {
+	font-family: "OpenSans" !important;
+	letter-spacing: 0.25em;
+}
+
+.login #nav, .login #backtoblog {
+	padding: 10px;
+	margin: 0 auto;
+	width: 275px;
+	font-size: 16px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+.login #nav a, .login #backtoblog a{
+	color: #333 !important;
+	text-decoration: none;
+}
+.login #nav {
+	border-top: none;
+	border-bottom: none;
+}
+.login #backtoblog {
+	font-size: 14px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}

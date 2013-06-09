@@ -1,0 +1,17 @@
+/* TEAM */
+                            
+Developer: Samuel Bran.
+Site: http://samuelbran.com
+Twitter: @samuelbran
+Location: San Salvador, El Salvador.
+
+/* THANKS */
+
+Name: name or url
+                                        
+/* SITE */
+       
+Last update: 2012/10/30 
+Standards: HTML5, CSS3, JavaScript
+Components: Modernizr, jQuery, WordPress.
+Software: Sublime Text 2, Google Chrome, Adobe Photoshop.
