@@ -182,7 +182,7 @@ function add_my_post_types_to_query( $query ) {
 * </div>
 */
 
-function myGalleryShortcode($attr) {
+/* function myGalleryShortcode($attr) {
 	$post = get_post();
 
 	static $instance = 0;
@@ -284,6 +284,7 @@ function myGalleryShortcode($attr) {
 
 	return $output;
 }
+*/
 
 /*************************************************************************/
 /*** REMOVING ACTIONS ***************************************************/
