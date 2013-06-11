@@ -103,6 +103,7 @@ function the_breadcrumbs() {
 * 2. Register Sidebar
 * 3. Adding Custom Post Types to the main query
 * 4. Custom Post Type
+* 5. Custom Markup for WordPress galleries
 */
 
 // 1. Custom menu support
@@ -164,11 +165,132 @@ function add_my_post_types_to_query( $query ) {
 	return $query;
 }
 
+// 5. Custom Markup for WordPress galleries
+
+/*
+* In order to enable this first uncomment the function below,
+* next go to the "REMOVING ACTIONS" section and uncomment "remove_shortcode('gallery', 'gallery_shortcode');",
+* finally go to the "ADDING SHORTCODES" section and uncomment "add_shortcode('gallery', 'myGalleryShortcode');"
+* thats all you're ready to go.
+*
+* This code will make all galleries in you WordPress installation be generated like this:
+*
+* <div id='$selector' class='gallery galleryid-{$id}'>
+* 	<div class='gallery-item'>
+*			<a href=""><img src=""></a>
+*		</div>
+* </div>
+*/
+
+function myGalleryShortcode($attr) {
+	$post = get_post();
+
+	static $instance = 0;
+	$instance++;
+
+	if ( ! empty( $attr['ids'] ) ) {
+		// 'ids' is explicitly ordered, unless you specify otherwise.
+		if ( empty( $attr['orderby'] ) )
+			$attr['orderby'] = 'post__in';
+		$attr['include'] = $attr['ids'];
+	}
+
+	// Allow plugins/themes to override the default gallery template.
+	$output = apply_filters('post_gallery', '', $attr);
+	if ( $output != '' )
+		return $output;
+
+	// We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+	if ( isset( $attr['orderby'] ) ) {
+		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+		if ( !$attr['orderby'] )
+			unset( $attr['orderby'] );
+	}
+
+	extract(shortcode_atts(array(
+		'order'      => 'ASC',
+		'orderby'    => 'menu_order ID',
+		'id'         => $post->ID,
+		'itemtag'    => 'div',
+		'icontag'    => 'span',
+		'captiontag' => 'span',
+		'columns'    => 1,
+		'size'       => 'full',
+		'include'    => '',
+		'exclude'    => ''
+	), $attr));
+
+	$id = intval($id);
+	if ( 'RAND' == $order )
+		$orderby = 'none';
+
+	if ( !empty($include) ) {
+		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+		$attachments = array();
+		foreach ( $_attachments as $key => $val ) {
+			$attachments[$val->ID] = $_attachments[$key];
+		}
+	} elseif ( !empty($exclude) ) {
+		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	} else {
+		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	}
+
+	if ( empty($attachments) )
+		return '';
+
+	if ( is_feed() ) {
+		$output = "\n";
+		foreach ( $attachments as $att_id => $attachment )
+			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+		return $output;
+	}
+
+	$itemtag = tag_escape($itemtag);
+	$captiontag = tag_escape($captiontag);
+	$columns = intval($columns);
+	//$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+	$float = is_rtl() ? 'right' : 'left';
+
+	$selector = "gallery-{$instance}";
+
+	$gallery_style = $gallery_div = '';
+	if ( apply_filters( 'use_default_gallery_style', true ) )
+		$gallery_style = "";
+	$size_class = sanitize_html_class( $size );
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id}'>";
+	$output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
+
+	$i = 0;
+	foreach ( $attachments as $id => $attachment ) {
+		$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, false, false);
+
+		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "$link";
+		if ( $captiontag && trim($attachment->post_excerpt) ) {
+			$output .= "
+				<{$captiontag} class='wp-caption-text gallery-caption'>
+				" . wptexturize($attachment->post_excerpt) . "
+				</{$captiontag}>";
+		}
+		$output .= "</{$itemtag}>";
+		if ( $columns > 0 && ++$i % $columns == 0 )
+			$output .= '';
+	}
+
+	$output .= "
+		</div>\n";
+
+	return $output;
+}
+
 /*************************************************************************/
 /*** REMOVING ACTIONS ***************************************************/
 /***********************************************************************/
 
 remove_action('wp_head', 'wp_generator');
+// remove_shortcode('gallery', 'gallery_shortcode');
 
 /*************************************************************************/
 /*** ADDING ACTIONS *****************************************************/
@@ -178,6 +300,11 @@ add_action( 'init', 'customMainMenu' );
 add_action('login_head', 'customLogin');
 add_action( 'wp_head', 'scriptsAndStyles', 0);
 add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
+/*************************************************************************/
+/*** ADDING SHORCODES ***************************************************/
+/***********************************************************************/
+// add_shortcode('gallery', 'myGalleryShortcode');
 
 /*************************************************************************/
 /*** ADDING FILTERS *****************************************************/
