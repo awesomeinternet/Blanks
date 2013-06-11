@@ -11,6 +11,7 @@ Semillero es mi propio theme para proyectos en WordPress. Se encuentra en consta
 + Agregar Custom Post Types al query principal.
 + Facebook Metatags.
 + Custom Post Types.
++ Custom Markup para las galerías
 
 Además incluye algunos recursos como:
 
