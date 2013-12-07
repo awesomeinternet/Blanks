@@ -101,9 +101,8 @@ function the_breadcrumbs() {
 /*
 * 1. Custom menu support
 * 2. Register Sidebar
-* 3. Adding Custom Post Types to the main query
-* 4. Custom Post Type
-* 5. Custom Markup for WordPress galleries
+* 3. Custom Post Type
+* 4. Custom Markup for WordPress galleries
 */
 
 // 1. Custom menu support
@@ -127,7 +126,7 @@ if ( function_exists('register_sidebar')) {
 }
 
 // 3. Custom Post Type
-/*function my_custom_post_events() {
+/*function custom_posts() {
 	$labels = array(
 		'name'               => _x( 'Eventos', 'post type general name' ),
 		'singular_name'      => _x( 'Evento', 'post type singular name' ),
@@ -156,16 +155,30 @@ if ( function_exists('register_sidebar')) {
 	);
 	register_post_type( 'evento', $args );	
 }
+
+function custom_taxonomies() {
+
+	//Lugares taxonomies-------------------------------------------------------------------------------
+	$labels = array(
+		'name'              => _x( 'Lugares', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Lugar', 'taxonomy singular name' ),
+		'search_items'      => __( 'Buscar por lugar' ),
+		'all_items'         => __( 'Todos los lugar' ),
+		'edit_item'         => __( 'Editar lugar' ), 
+		'update_item'       => __( 'Actualizar lugar' ),
+		'add_new_item'      => __( 'Agregar lugar' ),
+		'new_item_name'     => __( 'Nuevo lugar' ),
+		'menu_name'         => __( 'Lugares' )
+	);
+	$args = array(
+		'labels' => $labels,
+		'hierarchical' => true,
+	);
+	register_taxonomy( 'lugar_del_evento', 'evento', $args );
+}
 */
 
-// 4. Adding Custom Post Types to the main query
-function add_my_post_types_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'evento') );
-	return $query;
-}
-
-// 5. Custom Markup for WordPress galleries
+// 4. Custom Markup for WordPress galleries
 
 /*
 * In order to enable this first uncomment the function below,
@@ -300,7 +313,8 @@ remove_action('wp_head', 'wp_generator');
 add_action( 'init', 'customMainMenu' );
 add_action('login_head', 'customLogin');
 add_action( 'wp_head', 'scriptsAndStyles', 0);
-add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+//add_action('init', 'custom_posts' );
+//add_action( 'init', 'custom_taxonomies', 0);
 
 /*************************************************************************/
 /*** ADDING SHORCODES ***************************************************/
