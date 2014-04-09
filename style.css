@@ -1,33 +1,11 @@
 /*
 Theme Name: Semillero
-Theme URI: http://samuelbran.com/semillero
+Theme URI: https://github.com/samuelbran/semillero
 Author: Samuel Bran
 Author URI: http://samuelbran.com/
-Description: Semillero is a starter theme for websites based on WordPress.
+Description: Wordpress starter theme
 */
-/* BASIC STYLES
------------------------------------------------------------------------------------------------*/
-/*you can get rid of this.. if you want */
-.bt-title, .bt-description {
-  text-align: center;
-  margin: 0;
-}
-
-.bt-title {
-  padding-top: 120px;
-  font-size: 7em;
-  font-family: 'OpenSansExtrabold';
-  color: #e04237;
-}
-
-.bt-description {
-  color: #f0b753;
-  margin-top: -10px;
-  margin-bottom: 80px;
-  letter-spacing: 2px;
-}
-
-/*-----------------------------------------*/
+/* line 13, sass/style.scss */
 * {
   outline: 0;
   border: none;
@@ -35,6 +13,7 @@ Description: Semillero is a starter theme for websites based on WordPress.
   list-style-type: none;
 }
 
+/* line 19, sass/style.scss */
 body {
   color: #413e4f;
   background: #f9f9f9;
@@ -42,12 +21,14 @@ body {
   margin: 0;
 }
 
+/* line 25, sass/style.scss */
 h1, h2, h3,
 h4, h5, h6 {
   font-weight: normal;
   margin: 0;
 }
 
+/* line 30, sass/style.scss */
 a {
   color: #e04237;
   -webkit-transition: all ease-in 0.1s;
@@ -55,18 +36,22 @@ a {
   transition: all ease-in 0.1s;
 }
 
+/* line 34, sass/style.scss */
 a:hover {
   text-decoration: underline;
 }
 
+/* line 43, sass/style.scss */
 .float-left {
   float: left;
 }
 
+/* line 46, sass/style.scss */
 .float-right {
   float: right;
 }
 
+/* line 49, sass/style.scss */
 .clearfloat:after {
   display: block;
   content: "";
@@ -75,43 +60,53 @@ a:hover {
   height: 0;
 }
 
+/* line 57, sass/style.scss */
 .wrapper {
   width: 960px;
   margin: 0 auto;
   position: relative;
 }
 
+/* line 64, sass/style.scss */
 #main {
   min-height: 500px;
 }
 
 /* =Navigation
 -----------------------------------------------------------------------------------------*/
+/* line 73, sass/style.scss */
 header nav {
   background: #fff;
 }
+/* line 76, sass/style.scss */
 header nav .menu {
   padding-left: 0;
   margin: 0;
   position: relative;
 }
+/* line 81, sass/style.scss */
 header nav .menu > li {
   display: inline-block;
   margin: 0 5px;
 }
+/* line 85, sass/style.scss */
 header nav .menu > li:hover > .sub-menu {
   display: block;
 }
+/* line 89, sass/style.scss */
 header nav .menu > li:first-child {
   margin-left: 0;
 }
+/* line 92, sass/style.scss */
 header nav .menu > li:last-child {
   margin-right: 0;
 }
+/* line 96, sass/style.scss */
 header nav .menu > li > a {
   padding: 10px;
   display: inline-block;
 }
+/* line 100, sass/style.scss */
 header nav .menu > li > a:hover {
   color: #f9f9f9;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -119,6 +114,7 @@ header nav .menu > li > a:hover {
   background: #e04237;
 }
 
+/* line 110, sass/style.scss */
 .active-link {
   color: #f9f9f9;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -128,54 +124,68 @@ header nav .menu > li > a:hover {
 
 /* =Sidebar
 -----------------------------------------------------------------------------------------*/
+/* line 119, sass/style.scss */
 aside {
   background: #fff;
   width: 35%;
   float: left;
 }
+/* line 124, sass/style.scss */
 aside ul {
   padding-left: 0;
   margin-top: 0;
 }
 
+/* line 130, sass/style.scss */
 .widget {
   padding: 20px 20px 0 20px;
 }
+/* line 133, sass/style.scss */
 .widget h2 {
   margin: 0;
 }
 
 /* =Error 404 Page
 -----------------------------------------------------------------------------------------*/
+/* line 140, sass/style.scss */
 .error404 {
   background: url("css/images/alert_bg.png") bottom right no-repeat;
   height: 100%;
 }
+/* line 144, sass/style.scss */
 .error404 h1 {
   font-size: 7.8125em;
   color: #c3c3c3;
 }
+/* line 149, sass/style.scss */
 .error404 p {
   color: #a4a4a4;
   padding-left: 20px;
 }
+/* line 154, sass/style.scss */
 .error404 .go-home {
   color: #333;
   margin-left: 10px;
 }
+/* line 158, sass/style.scss */
 .error404 .go-home span {
   font-size: 1.1666666666666666666666666666667em;
 }
+/* line 163, sass/style.scss */
 .error404 input[type=text], .error404 [type=submit] {
   padding: 5px 10px;
   border-radius: 3px;
 }
+/* line 168, sass/style.scss */
 .error404 input[type=text] {
   background: #ededed;
   margin: 10px 0 0 20px;
 }
+/* line 173, sass/style.scss */
 .error404 input[type=submit] {
   background: #e24444;
   color: #fff;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
+
+/*# sourceMappingURL=style.css.map */

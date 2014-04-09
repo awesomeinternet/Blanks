@@ -1,33 +1,14 @@
-@import "base";
 @charset "utf-8";
+
 /*
 Theme Name: Semillero
-Theme URI: http://samuelbran.com/semillero
+Theme URI: https://github.com/samuelbran/semillero
 Author: Samuel Bran
 Author URI: http://samuelbran.com/
-Description: Semillero is a starter theme for websites based on WordPress.
+Description: Wordpress starter theme
 */
-/* BASIC STYLES
------------------------------------------------------------------------------------------------*/
 
-/*you can get rid of this.. if you want */
-.bt-title, .bt-description {
-	text-align: center;
-	margin: 0;
-}
-.bt-title {
-	padding-top: 120px;
-	font-size: 7em;
-	font-family: 'OpenSansExtrabold';
-	color: $fourth-color;
-}
-.bt-description {
-	color: $fifth-color;
-	margin-top: -10px;
-	margin-bottom: 80px;
-	letter-spacing: 2px;
-}
-/*-----------------------------------------*/
+@import "base";
 
 * {
 	outline: 0;

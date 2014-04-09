@@ -15,8 +15,6 @@
 function scriptsAndStyles() {
   if (!is_admin()) {
 
-	wp_deregister_script('jquery');
-
   // Set the path to where scripts and styles dirs are, if you must.
   $scriptsDir = get_bloginfo('template_url')."/js/";
  	$cssDir = get_bloginfo('template_url')."/css/";
@@ -28,7 +26,6 @@ function scriptsAndStyles() {
 
   // Register the javascript files
 											//Handle            SOURCE            DEP   VER  FOOTER?
-  wp_register_script('jQuery', $scriptsDir.'jquery-1.8.2.min.js', null, 1.8, true);
 	wp_register_script( 'Custom', $scriptsDir.'custom.js', null, 1, true);
 
 	//load the styles
@@ -36,7 +33,6 @@ function scriptsAndStyles() {
   wp_enqueue_style('Fonts');
 
   //load the scripts
-  wp_enqueue_script('jQuery');
   wp_enqueue_script('Custom');
   }
 }
@@ -58,11 +54,10 @@ function customLoginTitle() {
 }
 
 // 3. Retrieve Featured image URL, must be called inside the loop.
-function featuredImageUrl() {
-	if (has_post_thumbnail( 'single-post-thumbnail' )) {
-		$imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		echo $imageURL[0];
-	}
+function featuredImgUrl($postID, $thumbname) {
+		$thumbname = $thumbname || 'single-post-thumbnail';
+    $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
+    echo $imageURL[0];
 }
 
 // 4. Breadcrumbs
