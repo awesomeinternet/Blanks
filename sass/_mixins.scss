@@ -1,0 +1,62 @@
+/*
+ * M I X I N S
+ *
+*/
+
+@mixin transition ($options) {
+	-webkit-transition: $options;
+	-moz-transition: $options;
+	transition: $options;
+}
+@mixin border-radius ($options) {
+	-webkit-border-radius: $options;
+	-moz-border-radius: $options;
+	border-radius: $options;
+}
+@mixin box-shadow ($options) {
+	-webkit-box-shadow: $options;
+	-moz-box-shadow: $options;
+	box-shadow: $options;
+}
+@mixin outline ($options: #000) {
+	outline: 1px dotted $options;
+}
+
+@mixin background-size ($options) {
+	-webkit-background-size: $options;
+	-moz-background-size: $options;
+	background-size: $options;
+}
+@mixin transition ($options...) {
+	-webkit-transition: $options;
+	-moz-transition: $options;
+	transition: $options;
+}
+@mixin transform ($options...) {
+	-webkit-transform: $options;
+	-moz-transform: $options;
+	transform: $options;
+}
+@mixin animation-name($options...) {
+	-webkit-animation-name: $options;
+	-moz-animation-name: $options;
+	animation-name: $options;
+}
+@mixin animation-delay($options...) {
+	-webkit-animation-delay: $options;
+	-moz-animation-delay: $options;
+	animation-delay: $options;
+}
+@mixin border-radius ($options) {
+	-webkit-border-radius: $options;
+	-moz-border-radius: $options;
+	border-radius: $options;
+}
+@mixin box-shadow ($options...) {
+	-webkit-box-shadow: $options;
+	-moz-box-shadow: $options;
+	box-shadow: $options;
+}
+@mixin outline (@optio$s: #000) {
+	outline: 1px dotted $options;
+}

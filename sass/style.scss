@@ -17,18 +17,14 @@ Description: Wordpress starter theme
 	list-style-type: none;
 }
 body {
-	color: $primary-color;
-	background: $third-color;
+	color: $first;
+	background: $third;
 	padding: 0;
 	margin: 0;
 }
-h1, h2, h3,
-h4, h5, h6 {
-	font-weight: normal;
-	margin: 0;
-}
+
 a {
-	color: $fourth-color;
+	color: $fourth;
 	@include transition(all ease-in .1s);
 }
 a:hover {
@@ -98,20 +94,20 @@ header nav {
 				display: inline-block;
 
 				&:hover {
-					color: $third-color;
+					color: $third;
 					text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
 					text-decoration: none;
-					background: $fourth-color;
+					background: $fourth;
 				}
 			}
 		}
 	}
 }
 .active-link {
-	color: $third-color;
+	color: $third;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
 	text-decoration: none;
-	background: $fourth-color;
+	background: $fourth;
 }
 
 /* =Sidebar
