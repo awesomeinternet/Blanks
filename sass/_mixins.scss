@@ -3,25 +3,6 @@
  *
 */
 
-@mixin transition ($options) {
-	-webkit-transition: $options;
-	-moz-transition: $options;
-	transition: $options;
-}
-@mixin border-radius ($options) {
-	-webkit-border-radius: $options;
-	-moz-border-radius: $options;
-	border-radius: $options;
-}
-@mixin box-shadow ($options) {
-	-webkit-box-shadow: $options;
-	-moz-box-shadow: $options;
-	box-shadow: $options;
-}
-@mixin outline ($options: #000) {
-	outline: 1px dotted $options;
-}
-
 @mixin background-size ($options) {
 	-webkit-background-size: $options;
 	-moz-background-size: $options;
