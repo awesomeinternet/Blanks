@@ -16,8 +16,8 @@ function scriptsAndStyles() {
   if (!is_admin()) {
 
   // Set the path to where scripts and styles dirs are, if you must.
-  $scriptsDir = get_bloginfo('template_url')."/js/";
- 	$cssDir = get_bloginfo('template_url')."/css/";
+  $scriptsDir = get_bloginfo('template_url') . "/js/";
+ 	$cssDir = get_bloginfo('template_url') . "/css/";
 
   // Register the CSS files
   										//Handle            SOURCE           DEP   VER    MEDIA
@@ -60,6 +60,11 @@ function featuredImgUrl($postID, $thumbname) {
 		$thumbname = $thumbname || 'single-post-thumbnail';
     $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
     echo $imageURL[0];
+}
+function get_featuredImgUrl($postID, $thumbname) {
+		$thumbname = $thumbname || 'single-post-thumbnail';
+    $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
+    return $imageURL[0];
 }
 
 // 4. Breadcrumbs

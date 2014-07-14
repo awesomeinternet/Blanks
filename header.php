@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en_US">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title><?php
@@ -36,6 +36,7 @@
 	<script src="<?php bloginfo('template_directory'); ?>/js/html5shiv.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" media="screen"/>
 <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="all"/>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link href="<?php echo home_url(); ?>" rel="index" title="<?php bloginfo('name') ?> - <?php bloginfo('description'); ?>"/>
