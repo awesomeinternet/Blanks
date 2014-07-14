@@ -18,7 +18,7 @@ function scriptsAndStyles() {
   // Set the path to where scripts and styles dirs are, if you must.
   $scriptsDir = get_bloginfo('template_url')."/js/";
  	$cssDir = get_bloginfo('template_url')."/css/";
-	
+
   // Register the CSS files
   										//Handle            SOURCE           DEP   VER    MEDIA
   wp_register_style( 'Normalize', $cssDir.'normalize.css', null, null, 'screen');
@@ -26,6 +26,7 @@ function scriptsAndStyles() {
 
   // Register the javascript files
 											//Handle            SOURCE            DEP   VER  FOOTER?
+  wp_register_script( 'jQuery', $scriptsDir.'jquery-1.8.2.min.js', null, 1, true);
 	wp_register_script( 'Custom', $scriptsDir.'custom.js', null, 1, true);
 
 	//load the styles
@@ -33,6 +34,7 @@ function scriptsAndStyles() {
   wp_enqueue_style('Fonts');
 
   //load the scripts
+  wp_enqueue_script('jQuery');
   wp_enqueue_script('Custom');
   }
 }
@@ -108,7 +110,7 @@ function customMainMenu() {
 }
 
 // 2. Register Sidebar
-if ( function_exists('register_sidebar')) { 
+if ( function_exists('register_sidebar')) {
 
 	//Sidebar Principal
 	register_sidebar(array(
@@ -133,7 +135,7 @@ if ( function_exists('register_sidebar')) {
 		'view_item'          => __( 'Ver Evento' ),
 		'search_items'       => __( 'Buscar Eventos' ),
 		'not_found'          => __( 'No se encontraron eventos' ),
-		'not_found_in_trash' => __( 'No se encontraron eventos en la papelera' ), 
+		'not_found_in_trash' => __( 'No se encontraron eventos en la papelera' ),
 		'parent_item_colon'  => '',
 		'menu_name'          => 'Eventos'
 	);
@@ -148,7 +150,7 @@ if ( function_exists('register_sidebar')) {
 		'capability_type' => 'post',
 		'rewrite' => array('slug' => 'eventos', 'with_front' => false)
 	);
-	register_post_type( 'evento', $args );	
+	register_post_type( 'evento', $args );
 }
 
 function custom_taxonomies() {
@@ -159,7 +161,7 @@ function custom_taxonomies() {
 		'singular_name'     => _x( 'Lugar', 'taxonomy singular name' ),
 		'search_items'      => __( 'Buscar por lugar' ),
 		'all_items'         => __( 'Todos los lugar' ),
-		'edit_item'         => __( 'Editar lugar' ), 
+		'edit_item'         => __( 'Editar lugar' ),
 		'update_item'       => __( 'Actualizar lugar' ),
 		'add_new_item'      => __( 'Agregar lugar' ),
 		'new_item_name'     => __( 'Nuevo lugar' ),
