@@ -9,11 +9,11 @@
        wp_title(''); echo ' Archive - '; }
     elseif (is_search()) {
        echo 'Search &quot;'.wp_specialchars($s).'&quot; - '; }
-    elseif (!(is_404()) && (is_single()) || (is_page())) {
+    elseif (!(is_404()) && (is_single()) || ( !is_page('homepage') )) {
        wp_title(''); echo ' - '; }
     elseif (is_404()) {
        echo '404 Not Found - '; }
-    if (is_home()) {
+    if (is_home() || is_page('homepage')) {
        bloginfo('name'); echo ' - '; bloginfo('description'); }
     else {
         bloginfo('name'); }
