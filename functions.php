@@ -17,25 +17,13 @@ function scriptsAndStyles() {
 
   // Set the path to where scripts and styles dirs are, if you must.
   $scriptsDir = get_bloginfo('template_url') . "/js/";
- 	$cssDir = get_bloginfo('template_url') . "/css/";
-
-  // Register the CSS files
-  										//Handle            SOURCE           DEP   VER    MEDIA
-  wp_register_style( 'Normalize', $cssDir.'normalize.css', null, null, 'screen');
-  wp_register_style( 'Fonts', $cssDir.'fonts.css', null, null, 'screen');
 
   // Register the javascript files
 											//Handle            SOURCE            DEP   VER  FOOTER?
-  wp_register_script( 'jQuery', $scriptsDir.'jquery-1.8.2.min.js', null, 1, true);
-	wp_register_script( 'Custom', $scriptsDir.'custom.js', null, 1, true);
-
-	//load the styles
-  wp_enqueue_style('Normalize');
-  wp_enqueue_style('Fonts');
+	wp_register_script( 'Scripts', $scriptsDir.'/min/scripts.js', null, 1, true);
 
   //load the scripts
-  wp_enqueue_script('jQuery');
-  wp_enqueue_script('Custom');
+  wp_enqueue_script('Scripts');
   }
 }
 

@@ -1,9 +1,6 @@
-<?php get_header(); ?>
+<?php get_header(); include 'includes/top.php'; ?>
 
-<?php include 'includes/top.php' ?>
-
-<section id="main">
-	<div class="wrapper">
-	</div>
-</section>
+	<section id="main">
+		<div class="wrapper"></div>
+	</section>
 <?php get_footer(); ?>

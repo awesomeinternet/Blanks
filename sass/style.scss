@@ -1,86 +1,26 @@
 @charset "utf-8";
 
 /*
-Theme Name: Semillero
-Theme URI: https://github.com/samuelbran/semillero
-Author: Samuel Bran
-Author URI: http://samuelbran.com/
-Description: Wordpress starter theme
+ * Theme Name: Semillero
+ * Theme URI: https://github.com/samuelbran/semillero
+ * Author: Samuel Bran
+ * Author URI: http://samuelbran.com/
+ * Description: Wordpress starter theme
 */
 
-@import "base";
+@import "normalize";
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
 
-* {
-	outline: 0;
-	border:none;
-	text-decoration: none;
-	list-style-type: none;
-}
-body {
-	color: $first;
-	background: $third;
-	padding: 0;
-	margin: 0;
-}
+header {
+	background: #f9f9f9;
+	padding: 20px 0;
 
-a {
-	color: $fourth;
-	@include transition(all ease-in .1s);
-}
-a:hover {
-	text-decoration: underline;
-}
-p {
-
-}
-img {
-
-}
-.float-left {
-	float: left;
-}
-.float-right {
-	float: right;
-}
-.clearfloat:after {
-	display: block;
-	content: "";
-	clear: both;
-	visibility: hidden;
-	height: 0;
-}
-
-.wrapper {
-	width: 960px;
-	margin: 0 auto;
-	position: relative;
-}
-
-header {}
-#main {
-	min-height: 500px;
-}
-
-footer {}
-
-
-/* =Navigation
------------------------------------------------------------------------------------------*/
-header nav {
-	background: #fff;
-
-	.menu {
-		padding-left: 0;
-		margin: 0;
-		position: relative;
-
-		& > li {
-			display: inline-block;
-			margin: 0 5px;
-
-			&:hover > .sub-menu {
-				display: block;
-			}
+	nav {
+		li {
+			float: left;
+			margin: 0 10px;
 
 			&:first-child {
 				margin-left: 0;
@@ -88,47 +28,21 @@ header nav {
 			&:last-child {
 				margin-right: 0;
 			}
-
-			& > a {
-				padding: 10px;
-				display: inline-block;
-
-				&:hover {
-					color: $third;
-					text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
-					text-decoration: none;
-					background: $fourth;
-				}
-			}
 		}
 	}
 }
-.active-link {
-	color: $third;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
-	text-decoration: none;
-	background: $fourth;
+footer {
+	color: #999;
 }
-
-/* =Sidebar
------------------------------------------------------------------------------------------*/
+.wrapper {
+	@include outer-container;
+}
 aside {
-	background: #fff;
-	width: 35%;
-	float: left;
-
-	ul {
-		padding-left: 0;
-		margin-top: 0;
-	}
+	@include span-columns(4);
+	@include omega();
 }
-
-.widget {
-	padding: 20px 20px 0 20px;
-
-	h2 {
-		margin: 0;
-	}
+article {
+	@include span-columns(8);
 }
 
 /* =Error 404 Page
@@ -138,8 +52,8 @@ aside {
 	height: 100%;
 
 	h1 {
-	font-size: 7.8125em;
-	color: #c3c3c3;
+		font-size: 7.8125em;
+		color: #c3c3c3;
 	}
 
 	p {
@@ -155,21 +69,4 @@ aside {
 			font-size: 1.1666666666666666666666666666667em;
 		}
 	}
-
-	input[type=text], [type=submit] {
-		padding: 5px 10px;
-		border-radius: 3px;
-	}
-
-	input[type=text] {
-		background: #ededed;
-		margin: 10px 0 0 20px;
-	}
-
-	input[type=submit] {
-		background: #e24444;
-		color: #fff;
-		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-	}
-
 }
