@@ -4,14 +4,7 @@
 /*** FUNCTIONS **********************************************************/
 /***********************************************************************/
 
-/*
-* 1. Register scripts and stylesheets
-* 2. Custom login form
-* 3. Retrieve Featured image URL
-* 4. Breadcrumbs
-*/
-
-// 1. Register scripts and stylesheets
+// Register scripts and stylesheets
 function scriptsAndStyles() {
   if (!is_admin()) {
 
@@ -27,23 +20,7 @@ function scriptsAndStyles() {
   }
 }
 
-// 2. Custom login form
-function customLogin() {
-	$files = '<link rel="stylesheet" media="all" href="'.get_bloginfo('template_directory').'/css/login.css" />
-						<link rel="stylesheet" media="all" href="'.get_bloginfo('template_directory').'/css/fonts.css" />
-	          <script src="'.get_bloginfo('template_directory').'/js/login.js"></script>';
-	echo $files;
-}
-
-function customLoginUrl() {
-	return get_bloginfo('url');
-}
-
-function customLoginTitle() {
-	return get_bloginfo('blogname');
-}
-
-// 3. Retrieve Featured image URL, must be called inside the loop.
+// Retrieve Featured image URL, must be called inside the loop.
 function featuredImgUrl($postID, $thumbname) {
 		$thumbname = $thumbname || 'single-post-thumbnail';
     $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
@@ -55,45 +32,10 @@ function get_featuredImgUrl($postID, $thumbname) {
     return $imageURL[0];
 }
 
-// 4. Breadcrumbs
-function the_breadcrumbs() {
-	global $post;
-	$crumbs = '<p><a href="'.get_option('home').'">Inicio</a>';
-
-	//if the page has a parent add title and link of parent
-	if($post->post_parent) {
-	$crumbs .= ' &raquo; <a href="'.get_permalink($post->post_parent).'">'.get_the_title($post->post_parent).'</a>';
-	}
-
-	// if it's not the front page of the site, but isn't the blog either
-	if((!is_front_page()) && (is_page())) {
-	$crumbs .= ' &raquo; '.get_the_title($post->ID);
-	}
-
-	//if it's the news/blog home page or any type of archive
-	if((is_home() ||(is_archive()))) {
-	$crumbs .= ' &raquo; '.get_the_title(get_option(page_for_posts));
-	}
-
-	//if it's a single news/blog post
-	if(is_single()) {
-	$crumbs .= ' &raquo; <a href="'.get_permalink(get_option(page_for_posts)).'">'.get_the_title(get_option(page_for_posts)).'</a>';
-	$crumbs .= ' &raquo; '.get_the_title($post->ID);
-	}
-	$crumbs .= '</p>'."\n";
-	echo $crumbs;
-}
-
 /*************************************************************************/
 /*** THEME FEATURES *****************************************************/
 /***********************************************************************/
 
-/*
-* 1. Custom menu support
-* 2. Register Sidebar
-* 3. Custom Post Type
-* 4. Custom Markup for WordPress galleries
-*/
 
 // 1. Custom menu support
 function customMainMenu() {
@@ -322,14 +264,5 @@ add_filter('login_headertitle', 'customLoginTitle');
 /*** ADDING THEME SUPPORT ***********************************************/
 /***********************************************************************/
 add_theme_support( 'post-thumbnails' );
-
-$defaults = array (
-	'default-color'          => '',
-	'default-image'          => '',
-	'wp-head-callback'       => '_custom_background_cb',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => ''
-);
-add_theme_support( 'custom-background', $defaults );
 
 ?>
