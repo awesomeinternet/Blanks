@@ -576,7 +576,8 @@ input[type="submit"] {
 
 header {
   background: #f9f9f9;
-  padding: 20px 0; }
+  padding: 20px 0;
+  margin-bottom: 20px; }
   header nav li {
     float: left;
     margin: 0 10px; }
