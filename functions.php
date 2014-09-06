@@ -20,6 +20,21 @@ function scriptsAndStyles() {
   }
 }
 
+// 2. Custom login form
+function customLogin() {
+	$files = '<link rel="stylesheet" media="all" href="'.get_bloginfo('template_directory').'/css/login.css" />
+	          <script src="'.get_bloginfo('template_directory').'/js/login.js"></script>';
+	echo $files;
+}
+
+function customLoginUrl() {
+	return get_bloginfo('url');
+}
+
+function customLoginTitle() {
+	return get_bloginfo('blogname');
+}
+
 // Retrieve Featured image URL, must be called inside the loop.
 function featuredImgUrl($postID, $thumbname) {
 		$thumbname = $thumbname || 'single-post-thumbnail';

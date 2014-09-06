@@ -8,10 +8,10 @@
  * Description: Wordpress starter theme
 */
 
-@import "normalize";
 @import "bourbon/bourbon";
 @import "base/base";
 @import "neat/neat";
+@import "normalize";
 
 header {
 	background: #f9f9f9;
