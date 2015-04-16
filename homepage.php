@@ -7,7 +7,6 @@
 
 	get_header();
 	include 'includes/top.php';
-
 ?>
 
 	<section id="main">
