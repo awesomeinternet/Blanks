@@ -78,30 +78,10 @@ body {
     margin: 0;
 }
 
-/*
- * Addresses font-family inconsistency between 'textarea' and other form elements.
- */
-
-button,
-input,
-select,
-textarea {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-}
-
 
 /* =============================================================================
    Links
    ========================================================================== */
-
-/*
- * Addresses outline displayed oddly in Chrome
- */
-
-a:focus {
-    outline: thin dotted;
-}
-
 /*
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test

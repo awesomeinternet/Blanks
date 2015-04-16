@@ -1,0 +1,62 @@
+header {
+	background: #f9f9f9;
+	padding: 20px 0;
+	margin-bottom: 20px;
+
+	nav {
+		li {
+			float: left;
+			margin: 0 10px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+footer {
+	color: #999;
+}
+.wrapper {
+	@include outer-container;
+	position: relative;
+}
+aside {
+	@include span-columns(4);
+	@include omega();
+}
+article {
+	@include span-columns(8);
+}
+
+/*
+ * Error 404 Page
+ *
+*/
+
+.error404 {
+	background: url("css/images/alert_bg.png") bottom right no-repeat;
+	height: 100%;
+
+	h1 {
+		font-size: 7.8125em;
+		color: #c3c3c3;
+	}
+
+	p {
+		color: #a4a4a4;
+		padding-left: 20px;
+	}
+
+	.go-home {
+		color: #333;
+		margin-left: 10px;
+
+		span {
+			font-size: 1.1666666666666666666666666666667em;
+		}
+	}
+}

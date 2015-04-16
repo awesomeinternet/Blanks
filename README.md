@@ -1,2 +1,2 @@
-#Semillero
+#Blanks
 ##WordPress starter theme
