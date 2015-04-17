@@ -36,17 +36,16 @@ function customLoginTitle() {
 }
 
 // Retrieve Featured image URL, must be called inside the loop.
-function featuredImgUrl($postID, $thumbname) {
-		$thumbname = $thumbname || 'single-post-thumbnail';
+function featured_image ($postID, $thumbname) {
+		$thumbname = !empty($thumbname) ? $thumbname : 'single-post-thumbnail';
     $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
     echo $imageURL[0];
 }
-function get_featuredImgUrl($postID, $thumbname) {
-		$thumbname = $thumbname || 'single-post-thumbnail';
+function get_featured_image ($postID, $thumbname) {
+		$thumbname = !empty($thumbname) ? $thumbname : 'single-post-thumbnail';
     $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
     return $imageURL[0];
 }
-
 /*************************************************************************/
 /*** THEME FEATURES *****************************************************/
 /***********************************************************************/
