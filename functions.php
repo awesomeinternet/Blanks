@@ -13,7 +13,7 @@ function scriptsAndStyles() {
 
   // Register the javascript files
 											//Handle            SOURCE            DEP   VER  FOOTER?
-	wp_register_script( 'Scripts', $scriptsDir.'/min/scripts.js', null, 1, true);
+	wp_register_script( 'Scripts', $scriptsDir.'/scripts.js', null, 1, true);
 
   //load the scripts
   wp_enqueue_script('Scripts');
