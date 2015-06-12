@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title><?php bloginfo('name') ?> - <?php bloginfo('description'); ?></title>

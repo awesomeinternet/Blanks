@@ -47,3 +47,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <header>
+    <div class="wrapper">
+    <nav>
+      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+    </nav>
+    </div>
+  </header>

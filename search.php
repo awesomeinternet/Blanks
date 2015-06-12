@@ -1,4 +1,4 @@
-<?php get_header(); include 'includes/top.php'; ?>
+<?php get_header(); ?>
 
 	<section id="main" class="clearfloat">
 		<div class="wrapper">

@@ -1,24 +1,18 @@
 @import "bourbon/bourbon";
-@import "variables";
-$imgPath: "../images";
+@import "base/base";
 
 body {
 	&.login {
-		background: #f2f2f2;
+		background: $first;
 
 		form {
 			margin-left: 0;
-			padding: 26px 24px 46px;
-			background: #009DDC url("#{$imgPath}/login-bg.png");
+			padding: 0;
+			background: $first;
 			border: none;
 			position: relative;
-			@include border-top-radius(5px);
-			@include border-bottom-radius(5px);
-			@include border-left-radius(5px);
-			@include border-right-radius(5px);
-			-moz-box-shadow: 0px 1px 3px #9d9d9d;
-			-webkit-box-shadow: 0px 1px 3px #9d9d9d;
-			box-shadow: 0px 1px 3px #9d9d9d;
+			border-radius: 0;
+			box-shadow: none;
 		}
 
 		p {
@@ -30,7 +24,7 @@ body {
 
 		h1 {
 			a {
-				background-image: url('#{$imgPath}/logo-login.png');
+				background-image: url('../images/logo-login.png');
 				background-size: 300px 65px;
 				background-position: top center;
 				background-repeat: no-repeat;
@@ -43,59 +37,57 @@ body {
 			}
 		}
 
-		input[type=submit] {
+		input[type="checkbox"] {
+			background: #fff !important;
+			border: none !important;
+			display: inline-block;
+		}
+
+		input[type="submit"] {
 			background: #f9f9f9;
 			text-shadow: none;
-			padding: 8px 25px;
+			padding: 8px 35px !important;
+			height: auto !important;
 			color: #333;
 			border: none;
-			@include border-top-radius(3px);
-			@include border-bottom-radius(3px);
-			@include border-left-radius(3px);
-			@include border-right-radius(3px);
-			-webkit-box-shadow: 0 1px 1px #085a7b;
-			-moz-box-shadow: 0 1px 1px #085a7b;
-			box-shadow: 0 1px 1px #085a7b;
+			border-radius: 0;
+			box-shadow: 1px 1px 3px rgba(#000, .2);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: #333;
+				background: darken(#f9f9f9, 10%);
+				box-shadow: 1px 1px 3px rgba(#000, .2);
+			}
 		}
-		input[type=text], input[type=text]:focus,
-		input[type=password], input[type=password]:focus {
-			border: 1px solid #fff;
+		input[type="text"], input[type="text"]:focus,
+		input[type="password"], input[type="password"]:focus {
+			border: none;
 			font-weight: normal;
-			padding: 5px;
-			text-align: center;
-			background: #e8e8e8;
-			-webkit-box-shadow: 0 1px 1px #085a7b;
-			-moz-box-shadow: 0 1px 1px #085a7b;
-			box-shadow: 0 1px 1px #085a7b;
-		}
-		input[type=text], input[type=text]:focus,
-		input[type=password], input[type=password]:focus {
-			border: 1px solid #fff;
-			padding: 5px;
-			text-align: center;
-			background: #e8e8e8;
-			-webkit-box-shadow: 0 1px 1px #085a7b;
-			-moz-box-shadow: 0 1px 1px #085a7b;
-			box-shadow: 0 1px 1px #085a7b;
-		}
-		input[type=password], input[type=password]:focus {
-			letter-spacing: 0.25em;
+			padding: 10px;
+			text-align: left;
+			background: #fff;
+			box-shadow: 1px 1px 3px rgba(#000, .2);
+			border-radius: 0;
 		}
 		#nav, #backtoblog {
-			padding: 10px;
+			padding: 0;
 			margin: 0 auto;
 			width: 275px;
 			font-size: 16px;
 			text-align: center;
-			background: #fff;
-			border: 1px solid #ddd;
+			background: none;
+			border: none;
 		}
 		#nav a, #backtoblog a{
-			color: #333 !important;
+			color: #fff !important;
 			text-decoration: none;
 		}
 		#nav {
-			border-top: none;
+			margin-top: 20px;
+			padding-top: 20px;
+			border-top: 1px solid darken($first, 5%);
 			border-bottom: none;
 		}
 		#backtoblog {
