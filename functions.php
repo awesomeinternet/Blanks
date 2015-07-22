@@ -76,7 +76,7 @@ if ( function_exists('register_sidebar')) {
 	$labels = array(
 		'name'               => _x( 'Eventos', 'post type general name' ),
 		'singular_name'      => _x( 'Evento', 'post type singular name' ),
-		'add_new'            => _x( 'Agregar nuevo', 'book' ),
+		'add_new'            => _x( 'Agregar nuevo', 'evento' ),
 		'add_new_item'       => __( 'Agregar nuevo Evento' ),
 		'edit_item'          => __( 'Editar Evento' ),
 		'new_item'           => __( 'Nuevo Evento' ),
