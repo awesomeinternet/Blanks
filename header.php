@@ -50,8 +50,12 @@
 <body <?php body_class(); ?>>
   <header>
     <div class="wrapper">
-    <nav>
-      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-    </nav>
+      <div class="logo-wrapper"></div>
+      <nav>
+        <div class="nav-inner">
+          <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+        </div>
+      </nav>
+      <a href="#" class="nav-trigger"><i class="fa fa-navicon"></i></a>
     </div>
   </header>
