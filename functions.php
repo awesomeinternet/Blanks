@@ -7,16 +7,15 @@
 // Register scripts and stylesheets
 function scriptsAndStyles() {
   if (!is_admin()) {
+	  // Set the path to where scripts and styles dirs are, if you must.
+	  $scriptsDir = get_bloginfo('template_url') . "/js";
 
-  // Set the path to where scripts and styles dirs are, if you must.
-  $scriptsDir = get_bloginfo('template_url') . "/js";
+	  // Register the javascript files
+												//Handle            SOURCE            DEP   VER  FOOTER?
+		wp_register_script( 'Scripts', $scriptsDir. '/script.js', null, 1, true);
 
-  // Register the javascript files
-											//Handle            SOURCE            DEP   VER  FOOTER?
-	wp_register_script( 'Scripts', $scriptsDir.'/all.js', null, 1, true);
-
-  //load the scripts
-  wp_enqueue_script('Scripts');
+	  //load the scripts
+	  wp_enqueue_script('Scripts');
   }
 }
 
@@ -36,15 +35,13 @@ function customLoginTitle() {
 }
 
 // Retrieve Featured image URL
-function featured_image ($postID, $thumbname) {
-		$thumbname = !empty($thumbname) ? $thumbname : 'single-post-thumbnail';
-    $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
-    echo $imageURL[0];
+function featured_image ($postID) {
+  $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'single-post-thumbnail' );
+  echo $imageURL[0];
 }
-function get_featured_image ($postID, $thumbname) {
-		$thumbname = !empty($thumbname) ? $thumbname : 'single-post-thumbnail';
-    $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $thumbname );
-    return $imageURL[0];
+function get_featured_image ($postID) {
+  $imageURL = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'single-post-thumbnail' );
+  return $imageURL[0];
 }
 /*************************************************************************/
 /*** THEME FEATURES *****************************************************/

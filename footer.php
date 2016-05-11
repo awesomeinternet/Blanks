@@ -1,8 +1,6 @@
 	<footer>
 		<div class="wrapper">
-			<?php bloginfo('name'); ?><br>
-			<?php bloginfo('description'); ?><br>
-			<?php echo date('Y'); ?>
+			Derechos Reservados <?php echo date('Y'); ?>
 		</div>
 	</footer>
 

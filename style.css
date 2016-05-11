@@ -2695,6 +2695,196 @@ ul.parsley-errors-list {
       border-left: 6px solid transparent;
       border-right: 6px solid transparent; }
 
+.parsley-error {
+  margin-bottom: 40px !important; }
+
+.select-wrapper {
+  position: relative;
+  height: 50px; }
+  .select-wrapper::after {
+    content: "\f0d7";
+    color: #fff;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-family: 'FontAwesome';
+    z-index: 15; }
+  .select-wrapper select {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    font-size: 1.4375em;
+    top: 13px;
+    z-index: 9;
+    text-transform: uppercase; }
+
+.cssanimations.flexboxlegacy.no-touchevents .select-wrapper select {
+  position: fixed;
+  top: -1000px;
+  left: -1000px; }
+.cssanimations.flexboxlegacy .select-wrapper {
+  background: #B8152D;
+  max-width: 300px;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.15); }
+  .cssanimations.flexboxlegacy .select-wrapper::after {
+    content: ""; }
+  .cssanimations.flexboxlegacy .select-wrapper .select {
+    position: relative;
+    height: 50px; }
+    .cssanimations.flexboxlegacy .select-wrapper .select:hover, .cssanimations.flexboxlegacy .select-wrapper .select.active {
+      border-radius: 3px;
+      background: #cf1833;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
+    .cssanimations.flexboxlegacy .select-wrapper .select .visor {
+      font-size: 16px;
+      line-height: 50px;
+      padding-left: 10px;
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+      z-index: 4;
+      color: #fff;
+      text-transform: uppercase; }
+    .cssanimations.flexboxlegacy .select-wrapper .select .indicator {
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      z-index: 3;
+      color: #fff; }
+    .cssanimations.flexboxlegacy .select-wrapper .select .options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      background: #fff; }
+      .cssanimations.flexboxlegacy .select-wrapper .select .options .option {
+        padding: 10px;
+        cursor: pointer;
+        color: #B8152D;
+        text-transform: uppercase;
+        border-bottom: 1px solid #dedede; }
+        .cssanimations.flexboxlegacy .select-wrapper .select .options .option:hover {
+          color: #fff;
+          background: #B8152D;
+          border-bottom: 1px solid #B8152D;
+          text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .cssanimations.flexboxlegacy .select-wrapper select {
+    color: #fff;
+    background: none;
+    margin-top: 0;
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+
+.box-title {
+  font-size: 38px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-style: italic; }
+
+.overly {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.9);
+  overflow-y: auto; }
+  .overly .box {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    margin: 60px auto 40px;
+    background: #fff;
+    animation-duration: .2s; }
+    .overly .box .close-trigger {
+      color: #fff;
+      position: absolute;
+      top: -40px;
+      right: 0;
+      font-size: 26px;
+      border: 2px solid #fff;
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      line-height: 30px; }
+  .overly .box-inner {
+    padding: 40px; }
+
+.expandables .expandable {
+  background: #B8152D;
+  margin-bottom: 10px; }
+.expandables .expandable-title {
+  position: relative;
+  padding: 10px;
+  background: #af142b;
+  height: 50px; }
+  .expandables .expandable-title span {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 5px;
+    color: #fff;
+    display: block; }
+.expandables .expandable-trigger {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 42px;
+  text-align: center;
+  background: #fff;
+  color: #B8152D;
+  border-radius: 3px; }
+  .expandables .expandable-trigger:hover, .expandables .expandable-trigger.active {
+    cursor: pointer;
+    color: #477dca; }
+.expandables .expandable-content {
+  padding: 10px 0; }
+  .expandables .expandable-content .expandable-content-inner {
+    padding: 20px;
+    background: #f9f9f9;
+    width: 90%;
+    border-radius: 5px;
+    margin: 10px auto; }
+    .expandables .expandable-content .expandable-content-inner p, .expandables .expandable-content .expandable-content-inner ol, .expandables .expandable-content .expandable-content-inner ul {
+      font-size: 14px;
+      color: #333; }
+    .expandables .expandable-content .expandable-content-inner ol, .expandables .expandable-content .expandable-content-inner ul {
+      margin-top: 20px;
+      margin-bottom: 40px; }
+      .expandables .expandable-content .expandable-content-inner ol li, .expandables .expandable-content .expandable-content-inner ul li {
+        margin-bottom: 10px; }
+    .expandables .expandable-content .expandable-content-inner ol {
+      list-style-type: decimal; }
+    .expandables .expandable-content .expandable-content-inner ul {
+      list-style-type: disc; }
+
+.csstransforms3d nav {
+  -webkit-transform: translate3d(270px, 0, 0);
+  -moz-transform: translate3d(270px, 0, 0);
+  -ms-transform: translate3d(270px, 0, 0);
+  -o-transform: translate3d(270px, 0, 0);
+  transform: translate3d(270px, 0, 0); }
+  .csstransforms3d nav.visible {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+.no-csstransforms3d nav {
+  right: -270px; }
+  .no-csstransforms3d nav.visible {
+    right: 0; }
+
 header {
   background: #f9f9f9;
   padding: 20px 0;
@@ -2713,7 +2903,9 @@ footer {
   color: #999; }
 
 .wrapper {
-  max-width: 68em;
+  max-width: 960px;
+  width: 95%;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   position: relative; }
@@ -2721,23 +2913,6 @@ footer {
     clear: both;
     content: "";
     display: table; }
-
-aside {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 31.7615656014%;
-  margin-right: 0; }
-  aside:last-child {
-    margin-right: 0; }
-
-article {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 65.8807828007%; }
-  article:last-child {
-    margin-right: 0; }
 
 /*
  * Error 404 Page
@@ -2758,4 +2933,113 @@ article {
     .error404 .go-home span {
       font-size: 1.1666666666666666666666666666667em; }
 
-/*# sourceMappingURL=style.css.map */
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+a img.alignnone {
+  margin: 5px 20px 20px 0; }
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px; }
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+@media (min-width: 960px) {
+  aside {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+    margin-right: 0; }
+    aside:last-child {
+      margin-right: 0; }
+
+  article {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 65.8807828007%; }
+    article:last-child {
+      margin-right: 0; } }

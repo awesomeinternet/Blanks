@@ -1,0 +1,115 @@
+.select-wrapper {
+	position: relative;
+	height: 50px;
+
+	&::after {
+		content: "\f0d7";
+		color: #fff;
+		position: absolute;
+		top: 14px;
+		right: 20px;
+		font-family: 'FontAwesome';
+		z-index: 15;
+	}
+
+	select {
+		display: inline-block;
+		width: auto;
+		position: relative;
+		font-size: em(23);
+		top: 13px;
+		z-index: 9;
+		text-transform: uppercase;
+	}
+}
+
+.cssanimations.flexboxlegacy {
+
+	&.no-touchevents {
+		.select-wrapper {
+			select {
+				position: fixed;
+				top: -1000px;
+				left: -1000px;
+			}
+		}
+	}
+
+	.select-wrapper {
+		background: $second;
+		max-width: 300px;
+		border-radius: 3px;
+		box-shadow: 0 2px 2px 1px rgba(#000, .15);
+
+		&::after {
+			content: "";
+		}
+
+		.select {
+			position: relative;
+			height: 50px;
+
+			&:hover,
+			&.active {
+				border-radius: 3px;
+				background: lighten($second, 5%);
+				text-shadow: 1px 1px 0 rgba(#000, .1);
+			}
+
+			.visor {
+				font-size: 16px;
+				line-height: 50px;
+				padding-left: 10px;
+				height: 100%;
+				cursor: pointer;
+				position: relative;
+				z-index: 4;
+				color: #fff;
+				text-transform: uppercase;
+			}
+
+			.indicator {
+				position: absolute;
+				top: 13px;
+				right: 15px;
+				z-index: 3;
+				color: #fff;
+			}
+
+			.options {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				z-index: 20;
+				background: #fff;
+
+				.option {
+					padding: 10px;
+					cursor: pointer;
+					color: $second;
+					text-transform: uppercase;
+					border-bottom: 1px solid #dedede;
+
+					&:hover {
+						color: #fff;
+						background: $second;
+						border-bottom: 1px solid $second;
+						text-shadow: 1px 1px 0 rgba(#000, .1);
+					}
+				}
+			}
+		}
+
+		select {
+			color: #fff;
+			background: none;
+			margin-top: 0;
+			border-radius: 0;
+			border: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+	}
+}

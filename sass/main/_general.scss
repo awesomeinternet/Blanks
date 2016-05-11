@@ -24,15 +24,8 @@ footer {
 	color: #999;
 }
 .wrapper {
-	@include outer-container;
+	@include outer-container(960px);
 	position: relative;
-}
-aside {
-	@include span-columns(4);
-	@include omega();
-}
-article {
-	@include span-columns(8);
 }
 
 /*
