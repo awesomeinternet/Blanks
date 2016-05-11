@@ -2,22 +2,75 @@ header {
 	background: #f9f9f9;
 	padding: 20px 0;
 	margin-bottom: 20px;
+}
+.nav-trigger {
+	position: absolute;
+	top: 9px;
+	right: 0;
+	width: 42px;
+	height: 42px;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 24px;
+	line-height: 38px;
+	border: 1px solid $second;
 
-	nav {
-		ul {
-			padding: 0;
-			li {
-				float: left;
-				margin: 0 10px;
+	i {
+		color: $second;
+	}
 
-				&:first-child {
-					margin-left: 0;
-				}
-				&:last-child {
-					margin-right: 0;
-				}
-			}
+	&.active {
+		background: $second;
+
+		i {
+			color: #fff;
 		}
+	}
+}
+.logo-wrapper {
+	max-width: 90px;
+	position: relative;
+	top: 8px;
+	z-index: 999;
+
+	a, img {
+		display: block;
+	}
+}
+nav {
+	position: fixed;
+	top: 60px;
+	right: 0;
+	overflow-y: auto;
+	z-index: 990;
+	width: 270px;
+	height: 100%;
+	background: $second;
+
+	&.visible {
+		@include transition(all ease-in .2s);
+	}
+
+	ul {
+		padding: 0;
+	}
+	a {
+		text-transform: uppercase;
+		color: #ffffff;
+		font-size: em(18);
+		font-weight: 700;
+		display: block;
+		cursor: pointer;
+		padding: 10px 0;
+		border-bottom: 1px solid $first;
+
+		&:hover {
+			color: rgba(#fff, .4);
+		}
+	}
+
+	.nav-inner {
+		padding: 55px 20px 120px 20px;
 	}
 }
 footer {
