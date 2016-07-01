@@ -1,17 +1,29 @@
 $(function() {
 	expandables();
 	tabs();
-
+	
 	if ( !Modernizr.touchevents ) {
 	  customSelects();
 	}
+	
+  $(".menu-item-has-children").each(function() {
+    var $this = $(this),
+        $trigger = $this.find("> a");
 
+    $trigger.click(function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      $this.toggleClass('active');
+    });
+  });
+	
 	$('.nav-trigger').click(function(e) {
 		e.preventDefault();
 		menu();
 	});
 
-	$('.overly').click(function() {
+  $('.overly').click(function() {
     toggleModal();
   });
 
