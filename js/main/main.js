@@ -42,4 +42,10 @@ $(function() {
       toggleModal();
     }
   });
+  
+  $('body').click(function(e) {
+    e.stopPropagation();
+
+    $('.menu-item-has-children').removeClass('active');
+  });
 });
