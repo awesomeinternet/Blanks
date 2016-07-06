@@ -61,6 +61,7 @@ if ( function_exists('register_sidebar')) {
 	//Sidebar Principal
 	register_sidebar(array(
 	  'name' => 'Sidebar principal',
+	  'id' => 'sidebar-principal',
 	  'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</li>',
 	  'before_title' => '<h2>',
