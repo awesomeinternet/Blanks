@@ -103,7 +103,7 @@ function customSelects() {
 	    		$visor = $(this).find('.visor');
 
 	    $options.click(function() {
-	    	$nativeSelect.val( $(this).data("value") );
+	    	$nativeSelect.val( $(this).data("value") ).trigger('change');
 	    	$visor.text( $(this).text() );
 	    });
     });
