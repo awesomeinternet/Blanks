@@ -16,3 +16,24 @@
 		}
 	}
 }
+
+@media ( min-width: $large-screen ) {
+	.csstransforms3d {
+		nav {
+			@include transform(translate3d(0, 0, 0));
+
+			&.visible {
+				@include transform(translate3d(0, 0, 0));
+			}
+		}
+	}
+	.no-csstransforms3d {
+		nav {
+			right: 0;
+
+			&.visible {
+				right: 0;
+			}
+		}
+	}
+}

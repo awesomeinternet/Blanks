@@ -32,8 +32,8 @@ select[multiple=multiple],
 textarea {
   background-color: $base-background-color;
   border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $form-box-shadow;
+  border-radius: 0;
+  box-shadow: none;
   box-sizing: border-box;
   font-family: $base-font-family;
   font-size: $base-font-size;

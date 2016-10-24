@@ -1,0 +1,56 @@
+article {
+	h1 {
+		font-size: em(32);
+	}
+	h2 {
+		font-size: em(26);
+	}
+	h3 {
+		font-size: em(21);
+	}
+	h4 {
+		font-size: em(18);
+	}
+
+	ol, ul {
+		margin-bottom: 20px;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+	ul {
+		list-style-type: disc;
+	}
+
+	h2 {
+		margin-top: 40px;
+	}
+
+	blockquote {
+		font-family: $georgia;
+		font-size: em(26);
+		font-style: italic;
+		color: #999;
+		border-left: 6px solid $first;
+		padding-left: 20px;
+	}
+
+	.has-sub-title {
+		margin-bottom: 0;
+
+		& + h2 {
+			margin-top: 0;
+			color: #999;
+		}
+	}
+}
+
+.post-head {
+	.post-title {
+		margin-bottom: 0;
+	}
+	.meta {
+		margin-bottom: 20px;
+	}
+}

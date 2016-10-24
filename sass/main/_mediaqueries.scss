@@ -1,7 +1,8 @@
-@media ( min-width: 960px ) {
+@media ( min-width: $large-screen ) {
 	aside {
 		@include span-columns(4);
 		@include omega();
+		margin-top: 0;
 	}
 	article {
 		@include span-columns(8);

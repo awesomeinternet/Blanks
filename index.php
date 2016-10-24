@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<section id="main">
+	<main>
 		<div class="wrapper"></div>
-	</section>
+	</main>
 <?php get_footer(); ?>

@@ -8,14 +8,19 @@
 function scriptsAndStyles() {
   if (!is_admin()) {
 	  // Set the path to where scripts and styles dirs are, if you must.
-	  $scriptsDir = get_bloginfo('template_url') . "/js";
+	  $scriptsDir = get_bloginfo('template_url') . "/js/main";
 
 	  // Register the javascript files
 												//Handle            SOURCE            DEP   VER  FOOTER?
 		wp_register_script( 'Scripts', $scriptsDir. '/scripts.js', null, 1, true);
+		wp_register_script( 'Functions', $scriptsDir. '/functions.js', null, 1, true);
+		wp_register_script( 'Main', $scriptsDir. '/main.js', null, 1, true);
+
 
 	  //load the scripts
 	  wp_enqueue_script('Scripts');
+	  wp_enqueue_script('Functions');
+	  wp_enqueue_script('Main');
   }
 }
 

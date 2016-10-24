@@ -20,6 +20,11 @@ body {
 				color: #fff;
 				text-shadow: 1px 1px 0 rgba(#000, .2);
 			}
+
+			&.forgetmenot {
+				float: none;
+				margin-bottom: 10px !important;
+			}
 		}
 
 		h1 {

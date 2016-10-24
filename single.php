@@ -1,16 +1,15 @@
 <?php get_header(); ?>
 
-	<section id="main">
+	<main>
 		<div class="wrapper">
 			<article>
-				<h2><?php the_title(); ?></h2>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<?php edit_post_link( __( 'Edit', '' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+					<h1><?php the_title(); ?></h1>
 					<?php the_content(); ?>
 				<?php endwhile; endif; ?>
 			</article>
 
 			<?php get_sidebar(); ?>
 		</div>
-	</section>
+	</main>
 <?php get_footer(); ?>

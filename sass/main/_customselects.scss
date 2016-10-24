@@ -1,15 +1,29 @@
 .select-wrapper {
 	position: relative;
-	height: 50px;
+	margin: 10px auto;
+	background: #fff;
+	border: 1px solid $first;
+
+	.scrollbar-inner > .scroll-element .scroll-bar {
+		background: darken($first, 5%);
+	}
+	.scrollbar-inner > .scroll-element .scroll-element_track {
+		background: tint($first, 15%);
+	}
+
+	&.alt {
+		background: none;
+		border: 1px solid #555;
+	}
 
 	&::after {
 		content: "\f0d7";
-		color: #fff;
+		color: $first;
 		position: absolute;
 		top: 14px;
 		right: 20px;
 		font-family: 'FontAwesome';
-		z-index: 15;
+		z-index: 5;
 	}
 
 	select {
@@ -17,7 +31,7 @@
 		width: auto;
 		position: relative;
 		font-size: em(23);
-		top: 13px;
+		top: 4px;
 		z-index: 9;
 		text-transform: uppercase;
 	}
@@ -25,8 +39,26 @@
 
 .cssanimations.flexboxlegacy {
 
+	&.touchevents {
+		.select-wrapper {
+			&::after {
+				color: #fff;
+			}
+			select {
+				color: #fff;
+			}
+		}
+	}
+
 	&.no-touchevents {
 		.select-wrapper {
+			background: none;
+			border: none;
+
+			&::after {
+				display: none;
+			}
+
 			select {
 				position: fixed;
 				top: -1000px;
@@ -36,44 +68,69 @@
 	}
 
 	.select-wrapper {
-		background: $second;
-		max-width: 300px;
-		border-radius: 3px;
-		box-shadow: 0 2px 2px 1px rgba(#000, .15);
+		border-radius: 0;
 
 		&::after {
-			content: "";
+			content: "\f107";
+			color: $first;
+			position: absolute;
+			top: 15px;
+			font-size: 21px;
+			right: 20px;
+			font-family: 'FontAwesome';
+			z-index: 5;
 		}
 
 		.select {
 			position: relative;
 			height: 50px;
-
-			&:hover,
-			&.active {
-				border-radius: 3px;
-				background: lighten($second, 5%);
-				text-shadow: 1px 1px 0 rgba(#000, .1);
-			}
+			width: 100%;
 
 			.visor {
-				font-size: 16px;
+				border: 1px solid $first;
+				background: #fff;
+				width: calc(100% - 50px);
+				font-size: 21px;
 				line-height: 50px;
 				padding-left: 10px;
 				height: 100%;
 				cursor: pointer;
 				position: relative;
-				z-index: 4;
-				color: #fff;
+				z-index: 10;
+				color: $first;
 				text-transform: uppercase;
+
+				&:hover {
+					background: #f8f8f8;
+				}
 			}
 
 			.indicator {
 				position: absolute;
-				top: 13px;
-				right: 15px;
+				top: 0;
+				right: 0;
 				z-index: 3;
-				color: #fff;
+				width: 50px;
+				height: 100%;
+				font-size: 32px;
+				text-align: center;
+				background: #fff;
+				color: $first;
+				border: 1px solid $first;
+				cursor: pointer;
+
+				&:hover {
+					background: #f8f8f8;
+				}
+
+				i {
+					&.fa-angle-down {
+						line-height: 48px;
+					}
+					&.fa-angle-right {
+						line-height: 47px;
+					}
+				}
 			}
 
 			.options {
@@ -81,35 +138,63 @@
 				top: 100%;
 				left: 0;
 				width: 100%;
-				z-index: 20;
+				z-index: 999;
 				background: #fff;
+				box-shadow: 0 1px 4px rgba(#000, .53);
 
 				.option {
 					padding: 10px;
 					cursor: pointer;
-					color: $second;
+					color: $first;
 					text-transform: uppercase;
-					border-bottom: 1px solid #dedede;
+					background: #fff;
+					border-bottom: 1px solid lighten($first, 8%);
 
 					&:hover {
-						color: #fff;
-						background: $second;
-						border-bottom: 1px solid $second;
-						text-shadow: 1px 1px 0 rgba(#000, .1);
+						background: #eee;
 					}
 				}
 			}
 		}
 
 		select {
-			color: #fff;
+			color: #333;
 			background: none;
 			margin-top: 0;
 			border-radius: 0;
 			border: none;
+			width: 100%;
+			height: 100%;
+			padding-left: 10px;
+			text-align: center;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
+		}
+
+		&.alt {
+			.select {
+				.visor {
+					background: none;
+					border: 1px solid #555;
+					color: #999;
+
+					&:hover {
+						border-color: shade($base-border-color, 20%);
+					}
+				}
+				.indicator {
+					background: none;
+					color: #555;
+					border-color: #555;
+				}
+				.options {
+					.option {
+						color: #555;
+						border-color: #555;
+					}
+				}
+			}
 		}
 	}
 }

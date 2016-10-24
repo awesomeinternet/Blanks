@@ -8,8 +8,7 @@
 	get_header();
 ?>
 
-	<section id="main">
-		<div class="wrapper">
-		</div>
-	</section>
+	<main>
+		<div class="wrapper"></div>
+	</main>
 <?php get_footer(); ?>
