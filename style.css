@@ -2998,7 +2998,8 @@ article .has-sub-title {
     .no-csstransforms3d nav.visible {
       right: 0; } }
 header {
-  background: #f9f9f9; }
+  background: #f9f9f9;
+  height: 75px; }
 
 .logo-wrapper {
   position: relative;
@@ -3081,13 +3082,26 @@ aside {
 
 nav {
   position: fixed;
-  top: 70px;
+  top: 75px;
   right: 0;
   overflow-y: auto;
   z-index: 990;
   width: 270px;
   height: 100%;
   background: #477dca; }
+  nav a {
+    color: #fff;
+    font-size: 1em;
+    display: block;
+    padding: 10px;
+    border-bottom: none;
+    font-weight: normal;
+    text-transform: uppercase; }
+    nav a:hover {
+      background: #477dca;
+      color: #fff; }
+  nav .nav-inner {
+    padding: 55px 20px 120px 20px; }
   nav.visible {
     -webkit-transition: all ease-in 0.2s;
     -moz-transition: all ease-in 0.2s;
@@ -3143,19 +3157,6 @@ nav {
     nav .menu li.current-menu-item a {
       background: #2c5999;
       color: #fff; }
-  nav a {
-    color: #fff;
-    font-size: 1em;
-    display: block;
-    padding: 10px;
-    border-bottom: none;
-    font-weight: normal;
-    text-transform: uppercase; }
-    nav a:hover {
-      background: #477dca;
-      color: #fff; }
-  nav .nav-inner {
-    padding: 55px 20px 120px 20px; }
 
 @media (min-width: 53.75em) {
   .nav-trigger {

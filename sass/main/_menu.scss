@@ -26,13 +26,32 @@
 }
 nav {
 	position: fixed;
-	top: 70px;
+	top: 75px;
 	right: 0;
 	overflow-y: auto;
 	z-index: 990;
 	width: 270px;
 	height: 100%;
 	background: $first;
+
+	a {
+		color: #fff;
+		font-size: em(16);
+		display: block;
+		padding: 10px;
+		border-bottom: none;
+		font-weight: normal;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $first;
+			color: #fff;
+		}
+	}
+
+	.nav-inner {
+		padding: 55px 20px 120px 20px;
+	}
 
 	&.visible {
 		@include transition(all ease-in .2s);
@@ -141,25 +160,6 @@ nav {
 				}
 			}
 		}
-	}
-
-	a {
-		color: #fff;
-		font-size: em(16);
-		display: block;
-		padding: 10px;
-		border-bottom: none;
-		font-weight: normal;
-		text-transform: uppercase;
-
-		&:hover {
-			background: $first;
-			color: #fff;
-		}
-	}
-
-	.nav-inner {
-		padding: 55px 20px 120px 20px;
 	}
 }
 
