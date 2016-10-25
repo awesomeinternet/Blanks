@@ -20,8 +20,13 @@ $(function() {
 	
 	$('.nav-trigger').click(function(e) {
 		e.preventDefault();
+		e.stopPropagation();
 		menu();
 	});
+	
+  $('nav').click(function(e) {
+    e.stopPropagation();
+  });
 
   $('.overly').click(function() {
     toggleModal();
@@ -46,6 +51,10 @@ $(function() {
   $('body').click(function(e) {
     e.stopPropagation();
 
+    if ( $('.nav-trigger').hasClass('active') ) {
+      menu();
+    }
+	  
     $('.menu-item-has-children').removeClass('active');
   });
 });
