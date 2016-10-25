@@ -30,3 +30,11 @@ button,
     opacity: 0.5;
   }
 }
+
+@media ( min-width: $medium-screen ) {
+  #{$all-button-inputs},
+  button,
+  .btn {
+    width: auto;
+  }
+}
