@@ -8,10 +8,7 @@
  * Description: Wordpress starter theme
 */
 
-@import "bourbon/bourbon";
-@import "base/base";
-@import "neat/neat";
-
+@import "bulma/bulma";
 @import "vendors/vendors";
 
 @import "main/main";

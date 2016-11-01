@@ -1,34 +1,21 @@
-header {
-	background: #f9f9f9;
-	height: 75px;
+footer {
+	color: #999;
+	background: $white-bis;
+	padding: 20px 0;
 }
 
-.logo-wrapper {
-	position: relative;
-	z-index: 999;
-	width: 50%;
-
-	a, img {
-		display: block;
-		width: 175px;
+nav {
+	&.nav {
+		background: $white-bis;
 	}
 }
 
-footer {
-	color: #999;
-	background: #f9f9f9;
-	padding: 20px 0;
-}
-.wrapper {
-	@include outer-container(960px);
-	position: relative;
-}
 main {
 	padding: 40px 0;
 }
 
 aside {
-	background: #f8f8f8;
+	background: $white-bis;
 	padding: 20px;
 	margin-top: 40px;
 

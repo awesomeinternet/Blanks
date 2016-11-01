@@ -1,5 +1,5 @@
 	<footer>
-		<div class="wrapper">
+		<div class="container">
 			<?php bloginfo('name') ?> - Derechos Reservados <?php echo date('Y'); ?>
 		</div>
 	</footer>

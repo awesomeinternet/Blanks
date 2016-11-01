@@ -9,6 +9,6 @@
 ?>
 
 	<main>
-		<div class="wrapper"></div>
+		<div class="container"></div>
 	</main>
 <?php get_footer(); ?>

@@ -51,21 +51,25 @@
 
 <body <?php body_class(); ?>>
   <header>
-    <div class="wrapper">
-      <div class="logo-wrapper">
-        <a href="<?php bloginfo('url') ?>">
-          <?php if( get_field('logo', 2) ) { ?>
-          <img src="<?php the_field('logo', 2); ?>" width="175" alt="<?php bloginfo('name') ?>">
-          <?php } else { ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" width="175" alt="<?php bloginfo('name') ?>">
-          <?php } ?>
-        </a>
-      </div>
-      <nav>
-        <div class="nav-inner">
-          <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+    <nav class="nav has-shadow">
+      <div class="container">
+        <div class="nav-left">
+          <a class="nav-item is-brand" href="<?php bloginfo('url') ?>">
+            <?php if( get_field('logo', 2) ) { ?>
+            <img src="<?php the_field('logo', 2); ?>" alt="<?php bloginfo('name') ?>">
+            <?php } else { ?>
+            <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="<?php bloginfo('name') ?>">
+            <?php } ?>
+          </a>
         </div>
-      </nav>
-      <a href="#" class="nav-trigger"><i class="fa fa-navicon"></i></a>
-    </div>
+
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
+      </div>
+    </nav>
   </header>
