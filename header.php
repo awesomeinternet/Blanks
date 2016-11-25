@@ -41,6 +41,7 @@
   	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" media="screen"/>
   <![endif]-->
 
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/17a6c95a-c4bc-40a3-8795-84b77987e7c4.css"/>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="all"/>
@@ -69,7 +70,7 @@
           <span></span>
         </span>
 
-        <?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
       </div>
     </nav>
   </header>

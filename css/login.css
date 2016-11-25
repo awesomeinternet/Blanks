@@ -100,7 +100,7 @@ button,
 input,
 select,
 textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: "URW Geometric W01", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 code,
 pre {
@@ -3880,11 +3880,11 @@ a.box:active {
         border-bottom-color: #00d1b2; }
 
 body.login {
-  background: #ff470f; }
+  background: #3273dc; }
   body.login form {
     margin-left: 0;
     padding: 0;
-    background: #ff470f;
+    background: #3273dc;
     border: none;
     position: relative;
     border-radius: 0;
@@ -3946,7 +3946,7 @@ body.login {
   body.login #nav {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #f53900;
+    border-top: 1px solid #2366d1;
     border-bottom: none; }
   body.login #backtoblog {
     font-size: 14px;

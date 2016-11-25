@@ -52,29 +52,8 @@ function get_featured_image ($postID) {
 /*** THEME FEATURES *****************************************************/
 /***********************************************************************/
 
-// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
-function clean_custom_menus() {
-	$menu_name = 'main-menu'; // specify custom menu slug
-
-	if ( ($locations = get_nav_menu_locations() ) && isset( $locations[$menu_name] ) ) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = "<div class='nav-right nav-menu'>";
-
-		foreach ($menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-
-			$menu_list .= "<a class='nav-item' href='{$url}'>{$title}</a>";
-		}
-
-		$menu_list .= "</div>";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-
-	echo $menu_list;
+function css_attributes_filter($var) {
+  return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
 }
 
 // 1. Custom menu support
@@ -300,6 +279,9 @@ add_action( 'wp_head', 'scriptsAndStyles', 0);
 
 add_filter('login_headerurl', 'customLoginUrl');
 add_filter('login_headertitle', 'customLoginTitle');
+add_filter('nav_menu_css_class', 'css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'css_attributes_filter', 100, 1);
 
 /*************************************************************************/
 /*** ADDING THEME SUPPORT ***********************************************/
