@@ -117,6 +117,7 @@
 				background: #fff;
 				color: $first;
 				border: 1px solid $first;
+				border-left: none;
 				cursor: pointer;
 
 				&:hover {
@@ -152,6 +153,10 @@
 
 					&:hover {
 						background: #eee;
+					}
+					&.selected {
+						background: $first;
+						color: #fff;
 					}
 				}
 			}

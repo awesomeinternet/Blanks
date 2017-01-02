@@ -29,14 +29,6 @@
   <meta name="owner" content=""/>
   <meta name="rating" content="General"/>
 
-  <!--Facebook Tags-->
-  <meta property="og:title" content=""/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content=""/>
-  <meta property="og:image" content="<?php bloginfo('template_directory'); ?>/images/fb_image.png"/>
-  <meta property="og:site_name" content=""/>
-  <meta property="og:description" content=""/>
-
   <!--[if IE]>
   	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" media="screen"/>
   <![endif]-->
