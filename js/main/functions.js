@@ -76,7 +76,6 @@ function expandables() {
 function rebuildCustomSelect(el) {
 	customSelects(el);
 }
-
 function customSelects(el) {
   var $selectWrappers = el != undefined ? $(el) : $('.select-wrapper');
 
@@ -88,12 +87,15 @@ function customSelects(el) {
     var $this = $(this),
         $nativeSelect = $(this).find('select'),
         selectOptions = [];
-        $defaultSelectedOption = $nativeSelect.find('option[selected]').length > 0 ? $nativeSelect.find('option[selected]') : $nativeSelect.find('option').first(),
-        defaultValue = $defaultSelectedOption.attr('value') != undefined ? $defaultSelectedOption.attr('value') : $defaultSelectedOption.text();
-        label = $defaultSelectedOption.text();
+        label = "";
 
 
-    $nativeSelect.val( defaultValue );
+    if ( !$this.hasClass('pick-first-val') ) {
+    	$nativeSelect.val('');
+    	label = $nativeSelect.data("label");
+    } else {
+    	label = $nativeSelect.find('option').first().text();
+    }
 
     $nativeSelect.find('option').each(function() {
     	var optionArray = [ $(this).text(), $(this).val()];
@@ -101,7 +103,8 @@ function customSelects(el) {
     	selectOptions.push( optionArray );
     });
 
-    var $select = createSelect(label, selectOptions);
+    var $select = createSelect(label, selectOptions, $this);
+    var $indicator = $select.find('.indicator i');
 
     $this.append($select);
 
@@ -117,7 +120,6 @@ function customSelects(el) {
 
 				$this.find('.options').fadeToggle('fast');
 				$this.toggleClass('active');
-
     	});
 
 	    var $options = $(this).find('.option'),
@@ -126,19 +128,25 @@ function customSelects(el) {
 	    $options.click(function(e) {
 	    	e.stopPropagation();
 
-	    	$nativeSelect.val( $(this).data("value") );
-	    	$visor.text( $(this).text() );
-	    	$nativeSelect.trigger('change');
-	    	$this.find('.options').hide();
+	    	if ( !$(this).hasClass('selected') ) {
+		    	$options.removeClass('selected');
+		    	$(this).addClass('selected');
+
+		    	$nativeSelect.val( $(this).data("value") );
+		    	$visor.text( $(this).text() );
+		    	$nativeSelect.trigger('change');
+		    	$this.find('.options').hide();
+	    	}
 	    });
     });
   });
 
-  function createSelect(label, options) {
-		var $select = $("<div class='select' />"),
+  function createSelect(label, options, thisSelectWrapper) {
+		var $thisSelectWrapper = thisSelectWrapper;
+				$select = $("<div class='select' />"),
 				$options = $("<div class='options' />")
 				.css({
-					height: 100,
+					height: 200,
 					overflowY: 'auto',
 					zIndex: 99
 				}),
@@ -169,10 +177,17 @@ function customSelects(el) {
 			var label = options[i][0],
 					val = options[i][1];
 
-			var option = $("<div />").attr({
-				class: "option",
-				"data-value": val
-			}).text(label);
+			if (i == 0 && $thisSelectWrapper.hasClass('pick-first-val') ) {
+				var option = $("<div />").attr({
+					class: "option selected",
+					"data-value": val
+				}).text(label);
+			} else {
+				var option = $("<div />").attr({
+					class: "option",
+					"data-value": val
+				}).text(label);
+			}
 
 			$scrollInner.append(option);
 		};
