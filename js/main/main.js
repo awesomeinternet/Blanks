@@ -56,5 +56,7 @@ $(function() {
     }
 	  
     $('.menu-item-has-children').removeClass('active');
+	  
+	  $(this).find('.select').removeClass('active').find('.options').hide();
   });
 });
