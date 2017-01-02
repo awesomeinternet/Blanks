@@ -74,59 +74,6 @@ if ( function_exists('register_sidebar')) {
 	));
 }
 
-// 3. Custom Post Type
-/*function custom_posts() {
-	$labels = array(
-		'name'               => _x( 'Eventos', 'post type general name' ),
-		'singular_name'      => _x( 'Evento', 'post type singular name' ),
-		'add_new'            => _x( 'Agregar nuevo', 'evento' ),
-		'add_new_item'       => __( 'Agregar nuevo Evento' ),
-		'edit_item'          => __( 'Editar Evento' ),
-		'new_item'           => __( 'Nuevo Evento' ),
-		'all_items'          => __( 'Todos los Eventos' ),
-		'view_item'          => __( 'Ver Evento' ),
-		'search_items'       => __( 'Buscar Eventos' ),
-		'not_found'          => __( 'No se encontraron eventos' ),
-		'not_found_in_trash' => __( 'No se encontraron eventos en la papelera' ),
-		'parent_item_colon'  => '',
-		'menu_name'          => 'Eventos'
-	);
-	$args = array(
-		'labels'        => $labels,
-		'description'   => 'Contiene todos los eventos',
-		'public'        => true,
-		'menu_position' => 4,
-		'menu_icon'			=> '',
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
-		'has_archive'   => true,
-		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'eventos', 'with_front' => false)
-	);
-	register_post_type( 'evento', $args );
-}
-
-function custom_taxonomies() {
-
-	//Lugares taxonomies-------------------------------------------------------------------------------
-	$labels = array(
-		'name'              => _x( 'Lugares', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Lugar', 'taxonomy singular name' ),
-		'search_items'      => __( 'Buscar por lugar' ),
-		'all_items'         => __( 'Todos los lugar' ),
-		'edit_item'         => __( 'Editar lugar' ),
-		'update_item'       => __( 'Actualizar lugar' ),
-		'add_new_item'      => __( 'Agregar lugar' ),
-		'new_item_name'     => __( 'Nuevo lugar' ),
-		'menu_name'         => __( 'Lugares' )
-	);
-	$args = array(
-		'labels' => $labels,
-		'hierarchical' => true,
-	);
-	register_taxonomy( 'lugar_del_evento', 'evento', $args );
-}
-*/
-
 // 4. Custom Markup for WordPress galleries
 
 /*
@@ -262,8 +209,6 @@ remove_action('wp_head', 'wp_generator');
 add_action( 'init', 'customMainMenu' );
 add_action('login_head', 'customLogin');
 add_action( 'wp_head', 'scriptsAndStyles', 0);
-//add_action('init', 'custom_posts' );
-//add_action( 'init', 'custom_taxonomies', 0);
 
 /*************************************************************************/
 /*** ADDING SHORCODES ***************************************************/
