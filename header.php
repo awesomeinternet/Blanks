@@ -33,8 +33,6 @@
   	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" media="screen"/>
   <![endif]-->
 
-  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="all"/>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link href="<?php echo home_url(); ?>" rel="index" title="<?php bloginfo('name') ?> - <?php bloginfo('description'); ?>"/>
