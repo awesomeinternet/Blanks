@@ -1,8 +1,5 @@
 .select-wrapper {
 	position: relative;
-	margin: 10px auto;
-	background: #fff;
-	border: 1px solid $first;
 
 	.scrollbar-inner > .scroll-element .scroll-bar {
 		background: darken($first, 5%);
@@ -20,7 +17,7 @@
 		content: "\f0d7";
 		color: $first;
 		position: absolute;
-		top: 14px;
+		top: 0;
 		right: 20px;
 		font-family: 'FontAwesome';
 		z-index: 5;
@@ -30,10 +27,9 @@
 		display: inline-block;
 		width: auto;
 		position: relative;
-		font-size: em(23);
+		font-size: em(16);
 		top: 4px;
 		z-index: 9;
-		text-transform: uppercase;
 	}
 }
 
@@ -42,10 +38,14 @@
 	&.touchevents {
 		.select-wrapper {
 			&::after {
-				color: #fff;
+				top: 0;
+				color: #333;
 			}
 			select {
-				color: #fff;
+				color: #333;
+				border-radius: $base-border-radius;
+				height: 50px;
+				border: $base-border;
 			}
 		}
 	}
@@ -85,6 +85,7 @@
 			position: relative;
 			height: 50px;
 			width: 100%;
+			margin-bottom: 0.75em;
 
 			.visor {
 			  border: $base-border;
@@ -151,6 +152,7 @@
 					&:hover {
 						background: #eee;
 					}
+
 					&.selected {
 						background: $first;
 						color: #fff;
