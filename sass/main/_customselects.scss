@@ -87,18 +87,18 @@
 			width: 100%;
 
 			.visor {
-				border: 1px solid $first;
+			  border: $base-border;
+			  border-right: 0;
+			  border-radius: $base-border-radius 0 0 $base-border-radius;
 				background: #fff;
 				width: calc(100% - 50px);
-				font-size: 21px;
+				overflow: hidden;
 				line-height: 50px;
 				padding-left: 10px;
 				height: 100%;
 				cursor: pointer;
 				position: relative;
 				z-index: 10;
-				color: $first;
-				text-transform: uppercase;
 
 				&:hover {
 					background: #f8f8f8;
@@ -109,24 +109,21 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				z-index: 3;
+				z-index: 10;
 				width: 50px;
 				height: 100%;
 				font-size: 32px;
 				text-align: center;
-				background: #fff;
-				color: $first;
-				border: 1px solid $first;
-				border-left: none;
+				color: #999;
+				border: $base-border;
+				border-radius: 0 $base-border-radius $base-border-radius 0;
 				cursor: pointer;
 
-				&:hover {
-					background: #f8f8f8;
-				}
-
 				i {
+					color: #999;
+
 					&.fa-angle-down {
-						line-height: 48px;
+						line-height: 52px;
 					}
 					&.fa-angle-right {
 						line-height: 47px;
